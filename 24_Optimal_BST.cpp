@@ -45,4 +45,3 @@ int main()
 			optimalSearchTree(keys, freq, n));
 	return 0;
 }
-
