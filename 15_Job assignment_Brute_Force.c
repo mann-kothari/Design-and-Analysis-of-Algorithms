@@ -15,12 +15,13 @@ void swap(int *a, int *b)
 
 void findMinCost(int costMatrix[N][N], int cost, int assigned[], int index)
 {
+	int i;
     if (index == N)
     {
         if (cost < minCost)
         {
             minCost = cost;
-            for (int i = 0; i < N; i++)
+            for (i = 0; i < N; i++)
             {
                 minAssignment[i] = assigned[i];
             }
@@ -28,7 +29,7 @@ void findMinCost(int costMatrix[N][N], int cost, int assigned[], int index)
         return;
     }
 
-    for (int i = index; i < N; i++)
+    for (i = index; i < N; i++)
     {
         swap(&assigned[index], &assigned[i]);
         findMinCost(costMatrix, cost + costMatrix[index][assigned[index]], assigned, index + 1);
@@ -44,7 +45,8 @@ int main()
         {5, 8, 1, 8},
         {7, 6, 9, 4}};
     int assigned[N];
-    for (int i = 0; i < N; i++)
+    int i;
+    for (i = 0; i < N; i++)
     {
         assigned[i] = i;
     }
@@ -53,7 +55,7 @@ int main()
 
     printf("Minimum cost: %d\n", minCost);
     printf("Assignment: ");
-    for (int i = 0; i < N; i++)
+    for (i = 0; i < N; i++)
     {
         printf("(%d, %d) ", i + 1, minAssignment[i] + 1);
     }

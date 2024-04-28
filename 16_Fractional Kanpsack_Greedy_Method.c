@@ -17,9 +17,10 @@ void swap(Item *a, Item *b)
 
 void sortItemsByRatio(Item items[], int n)
 {
-    for (int i = 0; i < n - 1; i++)
+	int i,j;
+    for (i = 0; i < n - 1; i++)
     {
-        for (int j = 0; j < n - i - 1; j++)
+        for (j = 0; j < n - i - 1; j++)
         {
             if (items[j].ratio < items[j + 1].ratio)
             {
@@ -35,8 +36,8 @@ float fractionalKnapsack(int capacity, Item items[], int n)
     int currentWeight = 0;
 
     sortItemsByRatio(items, n);
-
-    for (int i = 0; i < n; i++)
+	int i;
+    for (i = 0; i < n; i++)
     {
         if (currentWeight + items[i].weight <= capacity)
         {
@@ -62,8 +63,8 @@ int main()
         {20, 100, 0.0},
         {30, 120, 0.0}};
     int n = sizeof(items) / sizeof(items[0]);
-
-    for (int i = 0; i < n; i++)
+    int i;
+    for (i = 0; i < n; i++)
     {
         items[i].ratio = (float)items[i].value / items[i].weight;
     }

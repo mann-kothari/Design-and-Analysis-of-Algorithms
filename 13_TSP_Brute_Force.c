@@ -36,7 +36,8 @@ int next_permutation(int arr[], int size)
 int travllingSalesmanProblem(int graph[][V], int s)
 {
     int vertex[V - 1];
-    for (int i = 0, k = 0; i < V; i++)
+    int i,k;
+    for (i = 0, k = 0; i < V; i++)
     {
         if (i != s)
         {
@@ -49,7 +50,7 @@ int travllingSalesmanProblem(int graph[][V], int s)
     {
         int current_pathweight = 0;
         int k = s;
-        for (int i = 0; i < V - 1; i++)
+        for (i = 0; i < V - 1; i++)
         {
             current_pathweight += graph[k][vertex[i]];
             k = vertex[i];

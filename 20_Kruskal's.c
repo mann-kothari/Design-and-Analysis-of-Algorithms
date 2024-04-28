@@ -11,7 +11,8 @@ int comparator(const void *p1, const void *p2)
 
 void makeSet(int parent[], int rank[], int n)
 {
-    for (int i = 0; i < n; i++)
+	int i;
+    for (i = 0; i < n; i++)
     {
         parent[i] = i;
         rank[i] = 0;
@@ -55,6 +56,7 @@ void kruskalAlgo(int n, int edge[n][3])
 
     int parent[n];
     int rank[n];
+    int i;
 
     makeSet(parent, rank, n);
 
@@ -62,7 +64,7 @@ void kruskalAlgo(int n, int edge[n][3])
 
     printf(
         "Following are the edges in the constructed MST\n");
-    for (int i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
     {
         int v1 = findParent(parent, edge[i][0]);
         int v2 = findParent(parent, edge[i][1]);

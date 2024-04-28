@@ -5,11 +5,12 @@
 
 void printSolution(int dist[][V])
 {
+	int i,j;
     printf("The following matrix shows the shortest distances"
            " between every pair of vertices \n");
-    for (int i = 0; i < V; i++)
+    for (i = 0; i < V; i++)
     {
-        for (int j = 0; j < V; j++)
+        for (j = 0; j < V; j++)
         {
             if (dist[i][j] == INF)
                 printf("%7s", "INF");

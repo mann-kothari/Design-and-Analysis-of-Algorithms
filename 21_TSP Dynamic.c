@@ -17,6 +17,7 @@ int min(int a, int b) { return a < b ? a : b; }
 
 int fun(int i, int mask)
 {
+	int j;
     if (mask == ((1 << i) | 3))
         return dist[1][i];
 
@@ -25,7 +26,7 @@ int fun(int i, int mask)
 
     int res = MAX;
 
-    for (int j = 1; j <= n; j++)
+    for (j = 1; j <= n; j++)
         if ((mask & (1 << j)) && j != i && j != 1)
             res = min(res, fun(j, mask & (~(1 << i))) + dist[j][i]);
     return memo[i][mask] = res;
@@ -34,7 +35,8 @@ int fun(int i, int mask)
 int main()
 {
     int ans = MAX;
-    for (int i = 1; i <= n; i++)
+    int i;
+    for (i = 1; i <= n; i++)
         ans = min(ans, fun(i, (1 << (n + 1)) - 1) + dist[i][1]);
 
     printf("The cost of most efficient tour = %d", ans);

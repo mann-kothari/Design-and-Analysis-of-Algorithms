@@ -28,14 +28,14 @@ void printJobScheduling(Job arr[], int n)
 
     int result[n];
     bool slot[n];
-
-    for (int i = 0; i < n; i++)
+	int i,j;
+    for (i = 0; i < n; i++)
         slot[i] = false;
 
-    for (int i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
     {
 
-        for (int j = min(n, arr[i].dead) - 1; j >= 0; j--)
+        for (j = min(n, arr[i].dead) - 1; j >= 0; j--)
         {
 
             if (slot[j] == false)
@@ -47,7 +47,7 @@ void printJobScheduling(Job arr[], int n)
         }
     }
 
-    for (int i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
         if (slot[i])
             printf("%c ", arr[result[i]].id);
 }
