@@ -1,1 +1,2 @@
-Design and Analysis of algorithm course material\n
+Design and Analysis of algorithm course material
+
